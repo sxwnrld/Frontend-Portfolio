@@ -9,9 +9,13 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [prevPathname, setPrevPathname] = useState(pathname);
 
   // Ferme le menu mobile à chaque changement de page
-  useEffect(() => setOpen(false), [pathname]);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setOpen(false);
+  }
 
   // Bloque le scroll de la page quand le menu mobile est ouvert
   useEffect(() => {
