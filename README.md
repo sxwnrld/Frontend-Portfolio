@@ -1,4 +1,4 @@
-# Portfolio — Sawwan Akrour
+# Portfolio 
 
 Portfolio personnel développé avec Next.js, React et Tailwind CSS, déployé sur Vercel.
 
@@ -66,10 +66,3 @@ Le site est ensuite accessible sur <http://localhost:3000>.
 ├── postcss.config.cjs
 └── package.json
 ```
-
-## Modifier le contenu
-
-Le contenu est séparé de la mise en page : pour mettre à jour le site, il suffit en général d'éditer les fichiers de `app/_data/`.
-
-- `site.ts` : nom, rôle, email, réseaux sociaux, compétences et parcours
-- `projects.ts` : liste des projets (un projet ajouté ici obtient automatiquement sa page `/projets/<slug>`)
