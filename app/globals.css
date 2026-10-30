@@ -192,6 +192,97 @@ body::before {
   to { transform: none; }
 }
 
+/* ---------- Hero 3D ---------- */
+
+/* --px/--py : souris (-1 → 1), --s : scroll (0 → 1), --e : entrée (1 → 0) */
+.hero-3d { --px: 0; --py: 0; --s: 0; --e: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero-3d { --e: 1; }
+}
+
+.hero-glow {
+  transform: translate(calc(-50% + var(--px) * 60px), calc(var(--py) * 40px));
+}
+
+.hero-parallax {
+  transform: translate3d(calc(var(--px) * -8px), calc(var(--py) * -6px), 0);
+}
+
+.hero-stage {
+  perspective: 1100px;
+  opacity: calc(1 - var(--s) * 1.3);
+}
+.hero-tilt {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform:
+    translateZ(calc(var(--s) * -220px))
+    rotateX(calc(var(--py) * -9deg + var(--e) * 55deg + var(--s) * 32deg))
+    rotateY(calc(var(--px) * 13deg));
+}
+
+/* Tranches d'épaisseur (même mise en page que le titre, empilées en Z) */
+.hero-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.hero-layer-glow {
+  color: #9d6bff;
+  opacity: 0.55;
+  filter: blur(0.14em);
+  transform: translateZ(-0.6em);
+}
+
+/* Face avant : reflet de lumière qui suit la souris */
+.hero-face { position: relative; }
+.hero-face .rise {
+  background-image: linear-gradient(
+    105deg,
+    #f2f1ec 0%,
+    #f2f1ec 38%,
+    #ffffff 46%,
+    #d8c8ff 50%,
+    #f2f1ec 58%,
+    #f2f1ec 100%
+  );
+  background-size: 250% 100%;
+  background-position: calc(80% - (var(--px) + 1) * 33%) 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Sol : grille en perspective qui avance en boucle */
+.hero-floor {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 62%;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 65% 100% at 50% 100%, #000 15%, transparent 75%);
+  transform: translateX(calc(var(--px) * -24px));
+}
+.hero-floor-plane {
+  position: absolute;
+  left: -40%;
+  right: -40%;
+  bottom: 0;
+  height: 1400px;
+  transform-origin: 50% 100%;
+  transform: perspective(600px) rotateX(62deg);
+  background-image:
+    linear-gradient(rgba(157, 107, 255, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(157, 107, 255, 0.28) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center bottom;
+  animation: floor 3.2s linear infinite;
+}
+@keyframes floor {
+  to { transform: perspective(600px) rotateX(62deg) translateY(64px); }
+}
+
 .fade-up { animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
