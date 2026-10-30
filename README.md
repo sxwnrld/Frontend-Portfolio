@@ -1,28 +1,75 @@
- Portfolio 
+# Portfolio — Sawwan Akrour
 
-Portfolio personnel développé avec Next.js, React et Tailwind CSS et deployer avec Render.
-Url : https://portfolio-27j7.onrender.com
+Portfolio personnel développé avec Next.js, React et Tailwind CSS, déployé sur Vercel.
 
-Ce projet présente mon profil, mes compétences et mes projets en développement web à travers une interface moderne, responsive .
+**Site en ligne :** <https://frontend-portfolio-psi-mauve.vercel.app>
 
- Technologies utilisées
+Il présente mon profil, mes compétences et mes projets en développement web à travers une interface moderne et responsive.
 
- Next.js 16
+## Pages
 
- React 19
+| Route | Contenu |
+| --- | --- |
+| `/` | Accueil |
+| `/projets` | Liste des projets |
+| `/projets/[slug]` | Détail d'un projet (généré statiquement) |
+| `/competences` | Compétences techniques et soft skills |
+| `/a-propos` | Parcours et présentation |
+| `/contact` | Coordonnées et réseaux |
 
- Tailwind CSS 3
+## Technologies
 
- TypeScript
+- [Next.js 16](https://nextjs.org/) (App Router)
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS 3](https://tailwindcss.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [ESLint 9](https://eslint.org/) avec `eslint-config-next`
 
- Node.js
+## Lancer le projet
 
- Structure du projet
-portfolio/
-│
-├── app/                # Pages et layout (App Router)
-├── public/             # Images et assets statiques
+Prérequis : [Node.js](https://nodejs.org/) 20.9 ou plus récent.
+
+```bash
+npm install
+npm run dev
+```
+
+Le site est ensuite accessible sur <http://localhost:3000>.
+
+## Scripts
+
+| Commande | Description |
+| --- | --- |
+| `npm run dev` | Lance le serveur de développement |
+| `npm run build` | Génère la version de production |
+| `npm run start` | Lance la version de production (après `build`) |
+| `npm run lint` | Vérifie le code avec ESLint |
+
+## Structure du projet
+
+```text
+├── app/
+│   ├── _components/      # Composants réutilisables (Navbar, Footer, ...)
+│   ├── _data/            # Contenu du site : infos, compétences, projets
+│   ├── projets/          # Liste et pages détail des projets
+│   ├── competences/
+│   ├── a-propos/
+│   ├── contact/
+│   ├── layout.tsx        # Layout global (polices, navbar, footer)
+│   ├── page.tsx          # Page d'accueil
+│   ├── not-found.tsx     # Page 404
+│   └── globals.css
+├── public/               # Assets statiques
+├── eslint.config.mjs
 ├── tailwind.config.cjs
 ├── postcss.config.cjs
-├── package.json
-└── README.md
+└── package.json
+```
+
+## Modifier le contenu
+
+Le contenu est séparé de la mise en page : pour mettre à jour le site, il suffit en général d'éditer les fichiers de `app/_data/`.
+
+- `site.ts` : nom, rôle, email, réseaux sociaux, compétences et parcours
+- `projects.ts` : liste des projets (un projet ajouté ici obtient automatiquement sa page `/projets/<slug>`)
