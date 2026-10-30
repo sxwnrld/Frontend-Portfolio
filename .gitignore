@@ -11,3 +11,6 @@ dist/
 .DS_Store
 Thumbs.db
 npm-debug.log*
+# Ancien historique du dossier app (dépôt Portfolio-Nextjs- supprimé)
+.app-git-backup/
+*.tsbuildinfo
