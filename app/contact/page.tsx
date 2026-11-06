@@ -1,4 +1,5 @@
 import Arrow from "../_components/Arrow";
+import ContactForm from "../_components/ContactForm";
 import CopyEmail from "../_components/CopyEmail";
 import PageHeader from "../_components/PageHeader";
 import { site } from "../_data/site";
@@ -23,10 +24,20 @@ export default function ContactPage() {
         intro="Je recherche actuellement un stage en développement web. Une opportunité, une question ou un projet ? Écrivez-moi, je vous répondrai avec plaisir."
       />
 
+      {/* FORMULAIRE */}
+      <section className="container-x pb-24 md:pb-32 grid gap-8 md:grid-cols-12">
+        <h2 className="eyebrow md:col-span-4" data-reveal>
+          Écrire un message
+        </h2>
+        <div className="md:col-span-8" data-reveal="1">
+          <ContactForm email={site.email} />
+        </div>
+      </section>
+
       {/* EMAIL */}
-      <section className="container-x pb-20 md:pb-28">
+      <section className="container-x pb-20 md:pb-28 border-t border-line pt-16 md:pt-20">
         <p className="eyebrow" data-reveal>
-          Par e-mail
+          Ou directement par e-mail
         </p>
         <a
           href={`mailto:${site.email}`}
