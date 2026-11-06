@@ -26,8 +26,8 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Taille calculée pour que "AKROUR." + le décalage tiennent dans la largeur (Syne est très large) */}
-        <h1 className="font-display font-extrabold uppercase leading-[0.9] tracking-[-0.03em] text-[clamp(2.4rem,8.2vw,8rem)]">
+        {/* Taille calculée pour que "AKROUR." + le décalage tiennent dans la largeur */}
+        <h1 className="font-display font-extrabold uppercase leading-[0.9] tracking-[-0.03em] text-[clamp(3rem,12vw,9rem)]">
           <span className="line-mask">
             <span className="rise">{site.firstName}</span>
           </span>

@@ -13,6 +13,11 @@
     @apply bg-ink text-paper font-sans antialiased;
   }
 
+  /* Young Serif n'a qu'une graisse : on évite le faux gras généré par le navigateur */
+  .font-display {
+    font-synthesis: none;
+  }
+
   ::selection {
     background: #9d6bff;
     color: #0a0a0b;

@@ -1,12 +1,12 @@
 import "./globals.css";
-import { Inter, JetBrains_Mono, Syne } from "next/font/google";
+import { Courier_Prime, Karla, Young_Serif } from "next/font/google";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import RevealObserver from "./_components/RevealObserver";
 
-const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
-const display = Syne({ subsets: ["latin"], variable: "--font-display", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+const sans = Karla({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const display = Young_Serif({ subsets: ["latin"], weight: "400", variable: "--font-display", display: "swap" });
+const mono = Courier_Prime({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-mono", display: "swap" });
 
 export const metadata = {
   title: {
