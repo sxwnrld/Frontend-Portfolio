@@ -61,10 +61,6 @@ export default function Navbar() {
           </nav>
 
           <div className="justify-self-end flex items-center gap-4">
-            <span className="hidden lg:inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.15em] text-muted">
-              <span className="status-dot" /> Disponible
-            </span>
-
             <button
               className="md:hidden flex items-center gap-3 font-mono text-xs uppercase tracking-[0.15em]"
               onClick={() => setOpen(!open)}
@@ -102,10 +98,7 @@ export default function Navbar() {
               ))}
             </ul>
           </nav>
-          <div className="menu-item space-y-3 text-sm text-muted" style={{ animationDelay: "400ms" }}>
-            <p className="inline-flex items-center gap-2.5">
-              <span className="status-dot" /> Disponible pour un stage
-            </p>
+          <div className="menu-item text-sm text-muted" style={{ animationDelay: "400ms" }}>
             <p>{site.email}</p>
           </div>
         </div>

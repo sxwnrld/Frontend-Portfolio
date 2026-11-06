@@ -10,7 +10,6 @@ export const metadata = {
 };
 
 const infos = [
-  { label: "Statut", value: "Disponible pour un stage" },
   { label: "Formation", value: "Bachelor 2 Développement Web — IIM" },
   { label: "Localisation", value: site.location },
 ];
@@ -82,10 +81,7 @@ export default function ContactPage() {
           {infos.map((info, i) => (
             <div key={info.label} data-reveal={String(i + 1)}>
               <dt className="eyebrow">{info.label}</dt>
-              <dd className="mt-2 text-lg inline-flex items-center gap-2.5">
-                {i === 0 && <span className="status-dot" />}
-                {info.value}
-              </dd>
+              <dd className="mt-2 text-lg">{info.value}</dd>
             </div>
           ))}
         </dl>

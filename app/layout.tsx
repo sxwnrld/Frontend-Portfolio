@@ -1,11 +1,11 @@
 import "./globals.css";
-import { Courier_Prime, Karla, Young_Serif } from "next/font/google";
+import { Courier_Prime, Karla, Newsreader } from "next/font/google";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import RevealObserver from "./_components/RevealObserver";
 
 const sans = Karla({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
-const display = Young_Serif({ subsets: ["latin"], weight: "400", variable: "--font-display", display: "swap" });
+const display = Newsreader({ subsets: ["latin"], axes: ["opsz"], variable: "--font-display", display: "swap" });
 const mono = Courier_Prime({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-mono", display: "swap" });
 
 export const metadata = {
