@@ -13,11 +13,6 @@
     @apply bg-ink text-paper font-sans antialiased;
   }
 
-  /* Young Serif n'a qu'une graisse : on évite le faux gras généré par le navigateur */
-  .font-display {
-    font-synthesis: none;
-  }
-
   ::selection {
     background: #9d6bff;
     color: #0a0a0b;
@@ -167,27 +162,6 @@ body::before {
 }
 
 /* ---------- Animations ---------- */
-
-/* Pastille "disponible" */
-.status-dot {
-  position: relative;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 9999px;
-  background: #4ade80;
-}
-.status-dot::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: inherit;
-  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-@keyframes ping {
-  75%, 100% { transform: scale(2.6); opacity: 0; }
-}
 
 /* Titre de l'accueil qui monte ligne par ligne */
 .line-mask { display: block; overflow: hidden; padding-bottom: 0.04em; }

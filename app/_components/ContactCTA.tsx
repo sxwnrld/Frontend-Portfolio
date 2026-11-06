@@ -7,12 +7,9 @@ export default function ContactCTA() {
   return (
     <section className="container-x">
       <div className="py-28 md:py-40 border-t border-line">
-        <p className="eyebrow inline-flex items-center gap-2.5" data-reveal>
-          <span className="status-dot" /> Disponible pour un stage
-        </p>
         <h2
-          data-reveal="1"
-          className="mt-8 font-display font-bold tracking-tight leading-[0.95] text-[clamp(2.5rem,8vw,7rem)]"
+          data-reveal
+          className="font-display font-bold tracking-tight leading-[0.95] text-[clamp(2.5rem,8vw,7rem)]"
         >
           Un stage, un projet{" "}?
           <br />

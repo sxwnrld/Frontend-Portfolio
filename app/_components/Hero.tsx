@@ -21,13 +21,10 @@ export default function Hero() {
       <div className="container-x relative min-w-0">
         <div className="flex flex-wrap items-center justify-between gap-4 mb-10 md:mb-14 fade-up">
           <p className="eyebrow">Portfolio — {new Date().getFullYear()}</p>
-          <p className="eyebrow inline-flex items-center gap-2.5 text-paper">
-            <span className="status-dot" /> Disponible pour un stage
-          </p>
         </div>
 
         {/* Taille calculée pour que "AKROUR." + le décalage tiennent dans la largeur */}
-        <h1 className="font-display font-extrabold uppercase leading-[0.9] tracking-[-0.03em] text-[clamp(3rem,12vw,9rem)]">
+        <h1 className="font-display font-extrabold uppercase leading-none tracking-[-0.03em] text-[clamp(3rem,12vw,9rem)]">
           <span className="line-mask">
             <span className="rise">{site.firstName}</span>
           </span>

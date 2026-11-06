@@ -67,9 +67,7 @@ export default function ContactForm({ email }: { email: string }) {
   if (sent) {
     return (
       <div role="status" className="rounded-2xl border border-line bg-surface p-8 md:p-10">
-        <p className="eyebrow inline-flex items-center gap-2.5">
-          <span className="status-dot" /> Message prêt
-        </p>
+        <p className="eyebrow">Message prêt</p>
         <p className="mt-6 font-display text-2xl md:text-3xl font-semibold tracking-tight">
           Merci {values.name.trim()}, votre messagerie s’est ouverte avec le message pré-rempli.
         </p>
